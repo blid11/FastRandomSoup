@@ -12,6 +12,7 @@ When I wrote the following program I was not aware that symmetric random soups c
 
 Below is an image of program compilation and use via the Windows Subsystem for Linux in Visual Studio Code. The program should be compatible with most C++ standards and compilers, however it runs fastest by installing the AMD Optimizing C/C++ compiler in Linux/Ubuntu, and using the following flags for compulation: 
 clang++ -O3 -march=znver2 -flto -mllvm -reduce-array-computations=2 Fixed.cpp -o Fixed
+
 One can then run the program using ./Fixed, where it will ask for the number of simulations to run. 
 
 ![image](https://user-images.githubusercontent.com/82735611/123555672-25b8eb80-d755-11eb-88a0-50bc4d90a88f.png)
