@@ -21,7 +21,6 @@ public:
 	int noOfLiveCells;
 	int gridDim;
 	vector<short> objectCellAddresses;
-
 	vector<vector<short>> shiftedAddresses;
 
 	bool stillLife;
