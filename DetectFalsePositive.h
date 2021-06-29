@@ -30,7 +30,6 @@ public:
   bool falsePositive;
 
   // Functions
-
   DetectFalsePositive(LookupNeighbours *lookup2, LrgLookup *lrgLookup,
                       vector<short> liveCellsOfObject, int numOfLiveCells,
                       short cellThtHitBorder, short gridLength);
@@ -51,14 +50,6 @@ DetectFalsePositive::DetectFalsePositive(LookupNeighbours *lookup2,
                                          int numOfLiveCells,
                                          short cellThtHitBorder,
                                          short gridLength) {
-
-  // how to find the centreMost cell of whatever configuration hit the border
-  // don't necessarily need to do that: for now just use whatever cell hit the
-  // border
-
-  // find the difference between the cell that hit the border and the centre
-  // cell in terms of i, j, k shift all the cells in liveCellsNearBorder by the
-  // difference vector for i, j, k
 
   lookup3 = lookup2;
 
@@ -86,6 +77,11 @@ DetectFalsePositive::DetectFalsePositive(LookupNeighbours *lookup2,
 
 void DetectFalsePositive::shiftCellAddresses() {
 
+  // how to find the centreMost cell of whatever configuration hit the border
+  // find the difference between the cell that hit the border and the centre
+  // cell in terms of i, j, k shift all the cells in liveCellsNearBorder by the
+  // difference vector for i, j, k
+
   short centredAddress[3] = {0, 0, 0};
   short differenceVector[3] = {0, 0, 0};
   vector<short> theBorderCell(3);
@@ -104,12 +100,9 @@ void DetectFalsePositive::shiftCellAddresses() {
 
   vector<short> indexVector(3);
 
-  // for(size_t iterOverLiveCells = 0; iterOverLiveCells <
-  // objectCellAddresses.size(); iterOverLiveCells++){
   for (vector<short>::iterator iter = objectCellAddresses.begin();
        iter != objectCellAddresses.end(); iter++) {
 
-    // index = objectCellAddresses[iterOverLiveCells];
     index = *iter;
 
     indexVector = getIndexVector(index);
@@ -366,7 +359,6 @@ void DetectFalsePositive::performUpdate() {
       updateStatCount->second = statCount;
       // cout<<index<<"died, state: "<< state << ", nCount: "<<count<< ",
       // statCount"<<updateStatCount->second<< endl;
-
       // the cell died and the nCount for its neighbours must be decremented to
       // 0
       long *pointsToNbours = lrgLook->getNeighbours(index);
