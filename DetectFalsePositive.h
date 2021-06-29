@@ -22,17 +22,13 @@ public:
 	int gridDim;
 	vector<short> objectCellAddresses;
 	vector<vector<short>> shiftedAddresses;
-
 	bool stillLife;
 	bool hitBorder;
 	vector<long> liveCellCurrent;
 	vector<long> liveCellPrev;
-
 	unordered_map<long, short> relevantCells;
 	unordered_map<long, short> incDecCells;
-
 	int numLiveCells;
-
 	bool falsePositive;
 
 	//Functions
@@ -40,19 +36,13 @@ public:
 	DetectFalsePositive(LookupNeighbours* lookup2, LrgLookup* lrgLookup, vector<short> liveCellsOfObject, int numOfLiveCells, short cellThtHitBorder, short gridLength);
 
 	vector<short> getIndexVector(short convertThis);
-
 	void shiftCellAddresses();
-
 	void runExperiment();
-
 	void makeNewSim();
 	void performUpdate();
-
 	bool getFalsePosInfo();
-
 	void printNotFP();
-
-	vector<vector<short>> getIndices();
+	vector<vector<shorgt>> getIndices();
 
 };
 
