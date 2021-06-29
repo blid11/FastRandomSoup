@@ -41,7 +41,7 @@ public:
   void performUpdate();
   bool getFalsePosInfo();
   void printNotFP();
-  vector<vector<shorgt>> getIndices();
+  vector<vector<short>> getIndices();
 };
 
 DetectFalsePositive::DetectFalsePositive(LookupNeighbours *lookup2,
@@ -52,17 +52,11 @@ DetectFalsePositive::DetectFalsePositive(LookupNeighbours *lookup2,
                                          short gridLength) {
 
   lookup3 = lookup2;
-
   firstBorder = cellThtHitBorder;
-
   objectCellAddresses = liveCellsOfObject;
-
   noOfLiveCells = numOfLiveCells;
-
   gridDim = 75;
-
   falsePositive = true;
-
   lrgLook = lrgLookup;
 
   shiftCellAddresses();
